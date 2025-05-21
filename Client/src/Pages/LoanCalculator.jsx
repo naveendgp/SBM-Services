@@ -2,24 +2,28 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 
 const LoanCalculator = () => {
-  const [loanAmount, setLoanAmount] = useState(500000);
-  const [interestRate, setInterestRate] = useState(8.5);
-  const [loanTenure, setLoanTenure] = useState(20);
+  const [loanAmount, setLoanAmount] = useState();
+  const [interestRate, setInterestRate] = useState();
+  const [loanTenure, setLoanTenure] = useState();
+  const [emi, setEmi] = useState(null); 
 
   const calculateEMI = () => {
-    const monthlyRate = interestRate / 12 / 100;
-    const months = loanTenure * 12;
-    const emi =
-      (loanAmount * monthlyRate * Math.pow(1 + monthlyRate, months)) /
-      (Math.pow(1 + monthlyRate, months) - 1);
-    return emi.toFixed(2);
-  };
+    const principal = parseFloat(loanAmount);
+    const rate = parseFloat(interestRate);
+    const tenure = parseFloat(loanTenure);
 
-  const scrollToSection = (id) => {
-    const section = document.getElementById(id);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
+    if (principal <= 0 || rate <= 0 || tenure <= 0) {
+      alert("Please enter valid values for all fields.");
+      return;
     }
+
+    const monthlyRate = rate / 12 / 100;
+    const months = tenure * 12;
+    const emiValue =
+      (principal * monthlyRate * Math.pow(1 + monthlyRate, months)) /
+      (Math.pow(1 + monthlyRate, months) - 1);
+
+    setEmi(emiValue.toFixed(2));
   };
 
   return (
@@ -40,6 +44,7 @@ const LoanCalculator = () => {
         <p className="text-gray-600 text-center mb-8">
           Calculate your monthly EMI with ease.
         </p>
+
         <div className="space-y-6">
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -78,29 +83,24 @@ const LoanCalculator = () => {
             />
           </div>
         </div>
-        <div className="mt-8 text-center">
-          <p className="text-lg font-semibold text-gray-700">
-            Estimated EMI:{" "}
-            <span className="text-blue-600 text-2xl font-bold">
-              ₹{calculateEMI()}
-            </span>
-          </p>
-        </div>
+
         <div className="mt-8 text-center">
           <button
             className="px-6 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-lg shadow-md hover:from-blue-700 hover:to-indigo-700 transition-all duration-300"
-            onClick={() => alert(`Your EMI is ₹${calculateEMI()}`)}
+            onClick={calculateEMI}
           >
-            Calculate Again
+            Calculate EMI
           </button>
         </div>
-        <div
-          className={`px-6 overflow-hidden transition-all duration-500 ${
-            activeAccordion === index ? "max-h-40 pb-4" : "max-h-0"
-          }`}
-        >
-          <p className="text-gray-600">{faq.answer}</p>
-        </div>
+
+        {emi && (
+          <div className="mt-8 text-center">
+            <p className="text-lg font-semibold text-gray-700">
+              Estimated EMI:{" "}
+              <span className="text-blue-600 text-2xl font-bold">₹{emi}</span>
+            </p>
+          </div>
+        )}
       </div>
     </div>
   );
