@@ -1,4 +1,5 @@
 const LoanApplication = require("../Models/LoanApplication");
+const User = require("../Models/User"); // Add this import at the top
 const path = require("path");
 const fs = require("fs");
 
@@ -318,6 +319,61 @@ exports.uploadDocuments = async (req, res) => {
     res.status(500).json({
       status: "error",
       message: "Failed to upload documents. Please try again later.",
+      error: error.message,
+    });
+  }
+};
+
+// Add this method to your existing LoanController if it doesn't exist
+
+exports.getApplicationById = async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    // Find application by ID
+    const application = await LoanApplication.findById(id);
+
+    if (!application) {
+      return res.status(404).json({
+        success: false,
+        message: "Application not found",
+      });
+    }
+
+    // Check if user is an admin or the application belongs to the user
+    const isAdmin = req.user.role === "admin";
+    // Fix the isOwner check by properly checking the user ID from the application
+    const isOwner =
+      req.user &&
+      application.user &&
+      application.user.toString() === req.user._id.toString();
+
+    // If not authorized, return error
+    if (!isAdmin && !isOwner) {
+      return res.status(403).json({
+        success: false,
+        message: "You are not authorized to access this application.",
+      });
+    }
+
+    // Get user details if userId exists
+    let userData = null;
+    if (application.user) {
+      userData = await User.findById(application.user).select("-password");
+    }
+
+    res.status(200).json({
+      success: true,
+      data: {
+        application,
+        user: userData,
+      },
+    });
+  } catch (error) {
+    console.error("Error getting application details:", error);
+    res.status(500).json({
+      success: false,
+      message: "Failed to fetch application details",
       error: error.message,
     });
   }

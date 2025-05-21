@@ -80,39 +80,84 @@ const loanApplicationSchema = new mongoose.Schema(
     // Document References
     documents: {
       identityProof: {
+        documentUrl: String,
         fileName: String,
         fileSize: String,
         fileType: String,
         filePath: String,
-        uploadDate: Date,
+        uploadDate: {
+          type: Date,
+          default: Date.now,
+        },
+        verificationStatus: {
+          type: String,
+          enum: ["pending", "verified", "rejected"],
+          default: "pending",
+        },
       },
       addressProof: {
+        documentUrl: String,
         fileName: String,
         fileSize: String,
         fileType: String,
         filePath: String,
-        uploadDate: Date,
+        uploadDate: {
+          type: Date,
+          default: Date.now,
+        },
+        verificationStatus: {
+          type: String,
+          enum: ["pending", "verified", "rejected"],
+          default: "pending",
+        },
       },
       incomeProof: {
+        documentUrl: String,
         fileName: String,
         fileSize: String,
         fileType: String,
         filePath: String,
-        uploadDate: Date,
+        uploadDate: {
+          type: Date,
+          default: Date.now,
+        },
+        verificationStatus: {
+          type: String,
+          enum: ["pending", "verified", "rejected"],
+          default: "pending",
+        },
       },
       bankStatements: {
+        documentUrl: String,
         fileName: String,
         fileSize: String,
         fileType: String,
         filePath: String,
-        uploadDate: Date,
+        uploadDate: {
+          type: Date,
+          default: Date.now,
+        },
+        verificationStatus: {
+          type: String,
+          enum: ["pending", "verified", "rejected"],
+          default: "pending",
+        },
       },
       propertyDocs: {
+        documentUrl: String,
         fileName: String,
         fileSize: String,
         fileType: String,
         filePath: String,
-        uploadDate: Date,
+        uploadDate: {
+          type: Date,
+          default: Date.now,
+        },
+        verificationStatus: {
+          type: String,
+          enum: ["pending", "verified", "rejected"],
+          default: "pending",
+        },
       },
     },
 
@@ -120,7 +165,7 @@ const loanApplicationSchema = new mongoose.Schema(
     status: {
       type: String,
       default: "Pending",
-      enum: ["Pending", "Under Review", "Approved", "Rejected"],
+      enum: ["pending", "under Review", "approved", "rejected"],
     },
     applicationDate: {
       type: Date,
@@ -141,6 +186,41 @@ const loanApplicationSchema = new mongoose.Schema(
       type: String,
       unique: true,
     },
+
+    // Timeline
+    timeline: [
+      {
+        date: {
+          type: Date,
+          default: Date.now,
+        },
+        event: {
+          type: String,
+          required: true,
+        },
+        status: {
+          type: String,
+          enum: ["completed", "current", "upcoming"],
+          default: "completed",
+        },
+        by: String,
+      },
+    ],
+
+    // Notes
+    notes: [
+      {
+        date: {
+          type: Date,
+          default: Date.now,
+        },
+        author: String,
+        text: {
+          type: String,
+          required: true,
+        },
+      },
+    ],
   },
   {
     timestamps: true,
@@ -159,6 +239,19 @@ loanApplicationSchema.pre("save", async function (next) {
 
     this.referenceNumber = `SBM-${year}-${month}${day}-${random}`;
   }
+
+  // If this is a new application and timeline is empty, add the submission event
+  if (this.isNew && (!this.timeline || this.timeline.length === 0)) {
+    this.timeline = [
+      {
+        date: this.createdAt || new Date(),
+        event: "Application submitted",
+        status: "completed",
+        by: "System",
+      },
+    ];
+  }
+
   next();
 });
 

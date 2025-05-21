@@ -3,6 +3,7 @@ const cors = require("cors");
 const path = require("path");
 const loanRoutes = require("./Router/LoanRoutes");
 const authRoutes = require("./Router/authRoutes");
+const adminRoutes = require("./Router/AdminRoutes");
 const errorHandler = require("./middleware/errorHandler");
 
 // Initialize app
@@ -19,6 +20,7 @@ app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 // Routes
 app.use("/api/loans", loanRoutes);
 app.use("/api/auth", authRoutes);
+app.use("/api/admin", adminRoutes);
 
 // Health check route
 app.get("/api/health", (req, res) => {
