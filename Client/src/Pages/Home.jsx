@@ -133,30 +133,30 @@ const Home = () => {
 
             {/* Desktop navigation */}
             <div className="hidden md:flex items-center space-x-8">
-              <Link
-                to="/"
+              <a
+                href="#home"
                 className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
               >
                 Home
-              </Link>
-              <Link
-                to="/about"
+              </a>
+              <a
+                href="#about"
                 className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
               >
                 About
-              </Link>
-              <Link
-                to="/services"
+              </a>
+              <a
+                href="#services"
                 className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
               >
                 Services
-              </Link>
-              <Link
-                to="/contact"
+              </a>
+              <a
+                href="#contact"
                 className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
               >
                 Contact
-              </Link>
+              </a>
 
               {/* Show either login button or user profile */}
               {user ? (
@@ -236,30 +236,30 @@ const Home = () => {
             className="md:hidden bg-white/95 backdrop-blur-md shadow-lg"
           >
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-              <Link
-                to="/"
+              <a
+                href="#home"
                 className="block px-3 py-2 rounded-md text-gray-700 hover:bg-blue-50 hover:text-blue-600"
               >
                 Home
-              </Link>
-              <Link
-                to="/about"
+              </a>
+              <a
+                href="#about"
                 className="block px-3 py-2 rounded-md text-gray-700 hover:bg-blue-50 hover:text-blue-600"
               >
                 About
-              </Link>
-              <Link
-                to="/services"
+              </a>
+              <a
+                href="#services"
                 className="block px-3 py-2 rounded-md text-gray-700 hover:bg-blue-50 hover:text-blue-600"
               >
                 Services
-              </Link>
-              <Link
-                to="/contact"
+              </a>
+              <a
+                href="#contact"
                 className="block px-3 py-2 rounded-md text-gray-700 hover:bg-blue-50 hover:text-blue-600"
               >
                 Contact
-              </Link>
+              </a>
 
               {user ? (
                 <>
@@ -303,8 +303,8 @@ const Home = () => {
         )}
       </nav>
 
-      {/* Hero section with enhanced visual elements */}
-      <section className="relative pt-20 lg:pt-28">
+      {/* Hero section */}
+      <section id="home" className="relative pt-20 lg:pt-28">
         <div className="absolute inset-0 z-0">
           <svg
             className="w-full h-full"
@@ -462,8 +462,8 @@ const Home = () => {
         </div>
       </section>
 
-      {/* About section with glass morphism */}
-      <section className="py-16 relative overflow-hidden">
+      {/* About section */}
+      <section id="about" className="py-16 relative overflow-hidden">
         <div className="absolute w-full h-full inset-0 bg-gradient-to-b from-white via-indigo-50 to-blue-50 -z-10"></div>
 
         {/* Glass panels decoration */}
@@ -563,8 +563,8 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Loan types section with glassmorphic cards */}
-      <section className="py-16 relative bg-gradient-to-br from-blue-50 to-indigo-100">
+      {/* Loan types section */}
+      <section id="services" className="py-16 relative bg-gradient-to-br from-blue-50 to-indigo-100">
         {/* Decorative patterns */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-32 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQ0MCIgaGVpZ2h0PSIxNDQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+ICAgIDxwYXRoIGQ9Ik0wIDEyOS4wNDlDMTk3LjU5Mi0yNCAxNDcyLjcyLTE4OC4yMzQgMTQ0MCAxMjkuMDQ5djIyLjI4Nkgwdi0yMi4yODZ6IiBmaWxsPSIjZmZmZmZmIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIG9wYWNpdHk9IjAuMjUiLz48L3N2Zz4=')]"></div>
@@ -777,8 +777,8 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Features section with enhanced card design */}
-      <section className="py-16 relative bg-gradient-to-b from-white via-indigo-50 to-white overflow-hidden">
+      {/* Features section */}
+      <section id="features" className="py-16 relative bg-gradient-to-b from-white via-indigo-50 to-white overflow-hidden">
         {/* Decorative background elements */}
         <div className="absolute top-0 left-0 right-0 h-32 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNDQwIDMyMCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+PHBhdGggZmlsbD0iI2YwZjdmZiIgZD0iTTAgMHYxNDRzMzQ4LjUtNzQgNzIwLTc0IDcyMCA3NCA3MjAgNzRWMEgweiI+PC9wYXRoPjwvc3ZnPg==')] bg-no-repeat -z-10"></div>
         <div className="absolute bottom-0 left-0 right-0 h-32 transform rotate-180 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNDQwIDMyMCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+PHBhdGggZmlsbD0iI2YwZjdmZiIgZD0iTTAgMHYxNDRzMzQ4LjUtNzQgNzIwLTc0IDcyMCA3NCA3MjAgNzRWMEgweiI+PC9wYXRoPjwvc3ZnPg==')] bg-no-repeat -z-10"></div>
@@ -988,9 +988,8 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Testimonials with aurora effect */}
       {/* Testimonials */}
-      <section className="py-16 bg-blue-700 text-white">
+      <section id="testimonials" className="py-16 bg-blue-700 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold">What Our Clients Say</h2>
@@ -1091,8 +1090,8 @@ const Home = () => {
         </div>
       </section>
 
-      {/* FAQ section with improved accordions */}
-      <section className="py-16 bg-gradient-to-br from-gray-50 to-white">
+      {/* FAQ section */}
+      <section id="faq" className="py-16 bg-gradient-to-br from-gray-50 to-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent inline-block">
@@ -1189,8 +1188,8 @@ const Home = () => {
         </div>
       </section>
 
-      {/* CTA section with improved design */}
-      <section className="py-16 bg-gradient-to-br from-blue-700 via-indigo-700 to-purple-700 text-white relative overflow-hidden">
+      {/* Contact section (CTA) */}
+      <section id="contact" className="py-16 bg-gradient-to-br from-blue-700 via-indigo-700 to-purple-700 text-white relative overflow-hidden">
         {/* Abstract background shapes */}
         <div className="absolute inset-0">
           <svg
@@ -1444,7 +1443,7 @@ const Home = () => {
                     />
                   </svg>
                   <span className="text-gray-400">
-                    123 Finance Street, Mumbai, Maharashtra 400001
+                    136C/1, 2nd floor, Mahaveer Plaza, Muthukadai, Ranipet-632401, Tamil Nadu
                   </span>
                 </li>
                 <li className="flex items-start">
