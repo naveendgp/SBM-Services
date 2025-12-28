@@ -11,13 +11,44 @@ export default function Services() {
   };
 
   const auditServices = [
-    { icon: CheckCircle, title: "Compliance", description: "Comprehensive internal audit services to identify gaps and ensure compliance" },
-    { icon: FileCheck, title: "Internal Audits", description: "Third-party audit preparation and support for certification success" },
-    { icon: Shield, title: "ISO 14001", description: "Ensure adherence to all applicable legal and regulatory requirements" },
-    { icon: Users, title: "ISO 45001", description: "Supplier Ethical Data Exchange compliance assessments" },
-    { icon: CheckCircle, title: "ISO 5001", description: "Business Social Compliance Initiative audits for ethical trading" },
-    { icon: Shield, title: "Social Compliance", description: "Worldwide Responsible Accredited Production certification support" },
-  ];
+  {
+    icon: CheckCircle,
+    title: "Compliance Services",
+    description:
+      "Comprehensive statutory, environmental, and operational compliance support aligned with regulatory and Supreme Court requirements.",
+  },
+  {
+    icon: FileCheck,
+    title: "Internal Audit Services",
+    description:
+      "Independent and systematic internal audits to evaluate compliance, system effectiveness, and audit readiness.",
+  },
+  {
+    icon: Shield,
+    title: "ISO 14001 – EMS",
+    description:
+      "Implementation and auditing of Environmental Management Systems to ensure regulatory compliance and improved environmental performance.",
+  },
+  {
+    icon: Users,
+    title: "ISO 45001 – OHSMS",
+    description:
+      "Occupational Health & Safety Management Systems to reduce workplace risks and strengthen safety culture.",
+  },
+  {
+    icon: Zap,
+    title: "ISO 50001 – EnMS",
+    description:
+      "Energy Management Systems to improve energy efficiency, reduce costs, and support continual improvement.",
+  },
+  {
+    icon: Shield,
+    title: "Social Compliance",
+    description:
+      "Support for ethical, legal, and worker welfare compliance aligned with statutory and social accountability requirements.",
+  },
+];
+
 
   const trainingServices = [
     { icon: GraduationCap, title: "ISO 14001 Training", description: "Environmental Management Systems implementation and best practices" },

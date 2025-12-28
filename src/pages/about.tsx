@@ -48,11 +48,11 @@ export default function About() {
 
           <motion.div {...fadeInUp}>
             <Card>
-              <CardContent className="p-8">
+              <CardContent className="p-8 item-center">
                 <h3 className="text-2xl font-bold mb-2">
                   Mr. Shivakumar, MBA, MLM
                 </h3>
-                <p className="text-muted-foreground mb-4">
+                <p className="text-muted-foreground mb-3">  
                   Founder & Lead Auditor – ISO 45001 | SA 8000
                 </p>
                 <p className="text-muted-foreground">
