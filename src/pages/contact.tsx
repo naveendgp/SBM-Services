@@ -187,11 +187,11 @@ export default function Contact() {
                     <div>
                       <h3 className="font-semibold text-foreground mb-1">Email</h3>
                       <a
-                        href="mailto:sbmservices.co.in@gmail.com"
+                        href="mailto:audit@sbmservice.co.in"
                         className="text-muted-foreground hover:text-accent transition-colors"
                         data-testid="contact-email"
                       >
-                        sbmservices.co.in@gmail.com
+                        audit@sbmservice.co.in
                       </a>
                     </div>
                   </div>
@@ -203,11 +203,11 @@ export default function Contact() {
                     <div>
                       <h3 className="font-semibold text-foreground mb-1">Phone</h3>
                       <a
-                        href="tel:+919585600085"
+                        href="tel:+919585500085"
                         className="text-muted-foreground hover:text-accent transition-colors"
                         data-testid="contact-phone"
                       >
-                        +91 95856 00085
+                        +91 95855 00085
                       </a>
                     </div>
                   </div>
@@ -219,7 +219,7 @@ export default function Contact() {
                     <div>
                       <h3 className="font-semibold text-foreground mb-1">Address</h3>
                       <p className="text-muted-foreground">
-                        No. 5, Bharathi Nagar,<br />
+                        No. 6, Bharathi Nagar,<br />
                         Walajapet, Ranipet,<br />
                         Tamil Nadu - 632513
                       </p>

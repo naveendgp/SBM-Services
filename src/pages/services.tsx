@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Shield, GraduationCap, Factory, CheckCircle, FileCheck, Users, Flame, Zap, HeartPulse, HardHat } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Link } from "wouter";
 
 export default function Services() {
   const fadeInUp = {
@@ -227,14 +228,14 @@ export default function Services() {
               Every organization is unique. We tailor our services to meet your specific compliance 
               and training requirements.
             </p>
-            <a href="/contact">
+            <Link to="/contact">
               <button
                 className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-accent text-accent-foreground hover:bg-accent/90 h-10 px-8 border border-accent-border"
                 data-testid="button-discuss-needs"
               >
                 Discuss Your Needs
               </button>
-            </a>
+            </Link>
           </motion.div>
         </div>
       </section>

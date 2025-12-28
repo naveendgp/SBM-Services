@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Award, Briefcase, GraduationCap } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { Link } from "wouter";
 
 export default function Team() {
   const fadeInUp = {
@@ -197,14 +198,14 @@ export default function Team() {
             <p className="text-xl text-muted-foreground mb-8">
               Experience the difference that professional expertise and dedication can make
             </p>
-            <a href="/contact">
+            <Link to="/contact">
               <button
                 className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-8 border border-primary-border"
                 data-testid="button-connect-team"
               >
                 Connect With Us
               </button>
-            </a>
+            </Link>
           </motion.div>
         </div>
       </section>

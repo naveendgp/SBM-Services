@@ -16,12 +16,12 @@ const images = [
   },
   {
     src: "/images/3.jpeg",
-    title: "On-site Compliance Awareness Session",
+    title: "Internal GAP Audit & Documentation Review",
     location: "Leather Industry Unit",
   },
    {
     src: "/images/4.png",
-    title: "Internal GAP Audit & Documentation Review",
+    title: "On-site Compliance Awareness Session",
     location: "Manufacturing Facility – Tamil Nadu",
   },
   {
