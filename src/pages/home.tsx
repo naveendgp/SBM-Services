@@ -3,6 +3,8 @@ import { motion } from "framer-motion";
 import { Shield, Award, Users, CheckCircle, TrendingUp, Target } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import AuditGallery from "@/components/AuditGallery";
+
 
 export default function Home() {
   const fadeInUp = {
@@ -112,6 +114,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <AuditGallery/>
     </div>
   );
 }

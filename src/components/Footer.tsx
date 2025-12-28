@@ -53,7 +53,7 @@ export default function Footer() {
                   className="text-sm text-primary-foreground/80 hover:text-accent transition-colors"
                   data-testid="link-email"
                 >
-                  sbmservices.co.in@gmail.com
+                  audit@sbmservices.co.in
                 </a>
               </div>
               <div className="flex items-start gap-2">
@@ -63,14 +63,29 @@ export default function Footer() {
                   className="text-sm text-primary-foreground/80 hover:text-accent transition-colors"
                   data-testid="link-phone"
                 >
-                  +91 95856 00085
+                  +91 95855 00085
                 </a>
               </div>
               <div className="flex items-start gap-2">
                 <MapPin className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
                 <span className="text-sm text-primary-foreground/80">
-                  No. 5, Bharathi Nagar, Walajapet,<br />Ranipet, TN - 632513
+                  No. 6, Bharathi Nagar, Walajapet,<br />Ranipet, TN - 632513
                 </span>
+              </div>
+              <div className="flex items-start gap-2">
+                <MapPin className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
+                <span className="text-sm text-primary-foreground/80">
+                  <p className="text-accent">Branch Address</p>
+                  No. 259, Gandhi Road<br />Kancheepuram, TN - 631501
+                  
+                <div className="flex items-start gap-2 mt-2">
+                  <Phone className="h-4 w-4 text-accent flex-shrink-0 mt-0.5" />
+                <a href="tel:044 47872283"
+                  className="text-sm text-primary-foreground/80 hover:text-accent transition-colors"
+                  data-testid="link-phone">044 47872283</a>
+                </div>
+                </span>
+
               </div>
             </div>
           </div>

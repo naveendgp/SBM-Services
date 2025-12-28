@@ -11,12 +11,12 @@ export default function Services() {
   };
 
   const auditServices = [
-    { icon: CheckCircle, title: "Internal Audits", description: "Comprehensive internal audit services to identify gaps and ensure compliance" },
-    { icon: FileCheck, title: "External Audits", description: "Third-party audit preparation and support for certification success" },
-    { icon: Shield, title: "Legal Compliance Checks", description: "Ensure adherence to all applicable legal and regulatory requirements" },
-    { icon: Users, title: "SEDEX Audits", description: "Supplier Ethical Data Exchange compliance assessments" },
-    { icon: CheckCircle, title: "BSCI Audits", description: "Business Social Compliance Initiative audits for ethical trading" },
-    { icon: Shield, title: "WRAP Certification", description: "Worldwide Responsible Accredited Production certification support" },
+    { icon: CheckCircle, title: "Compliance", description: "Comprehensive internal audit services to identify gaps and ensure compliance" },
+    { icon: FileCheck, title: "Internal Audits", description: "Third-party audit preparation and support for certification success" },
+    { icon: Shield, title: "ISO 14001", description: "Ensure adherence to all applicable legal and regulatory requirements" },
+    { icon: Users, title: "ISO 45001", description: "Supplier Ethical Data Exchange compliance assessments" },
+    { icon: CheckCircle, title: "ISO 5001", description: "Business Social Compliance Initiative audits for ethical trading" },
+    { icon: Shield, title: "Social Compliance", description: "Worldwide Responsible Accredited Production certification support" },
   ];
 
   const trainingServices = [
