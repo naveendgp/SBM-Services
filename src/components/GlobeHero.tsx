@@ -40,62 +40,96 @@ const Scene = ({ orbitText = "SBM", isRotationEnabled = true }: GlobeHeroProps) 
 
   return (
     <>
-      {/* === LIGHTING (THIS IS THE MAIN FIX) === */}
-      <ambientLight intensity={0.25} />
+      {/* BRIGHT LIGHTING FOR LIGHT BACKGROUND */}
+      <ambientLight intensity={1.5} color="#ffffff" />
 
-      {/* Key light */}
+      {/* Multiple directional lights for bright, even illumination */}
       <directionalLight
-        position={[6, 4, 6]}
-        intensity={2.6}
+        position={[8, 6, 8]}
+        intensity={3.5}
+        color="#ffffff"
+        castShadow
+      />
+
+      <directionalLight
+        position={[-6, 4, -6]}
+        intensity={2.5}
+        color="#e0f2fe"
+      />
+
+      <directionalLight
+        position={[0, 8, 0]}
+        intensity={2}
         color="#ffffff"
       />
 
-      {/* Rim light */}
-      <directionalLight
-        position={[-6, -2, -6]}
-        intensity={1.4}
-        color="#1e40af"
-      />
+      {/* Point lights for extra brightness */}
+      <pointLight position={[5, 5, 5]} intensity={2} color="#ffffff" />
+      <pointLight position={[-5, -5, -5]} intensity={1.5} color="#3b82f6" />
 
-      {/* === EARTH === */}
+      {/* EARTH with bright, vibrant material */}
       <mesh
         ref={earthRef}
         rotation={[0, 0, 23.5 * Math.PI / 180]}
+        castShadow
+        receiveShadow
       >
         <sphereGeometry args={[1, 64, 64]} />
         <meshPhongMaterial
           map={colorMap}
           normalMap={normalMap}
           specularMap={specularMap}
-          shininess={18}
-          specular="#93c5fd"
+          shininess={40}
+          specular="#60a5fa"
+          emissive="#1e3a5f"
+          emissiveIntensity={0.4}
         />
       </mesh>
 
-      {/* === ORBITING TEXT (CLEAN, PREMIUM GOLD) === */}
+      {/* Orbit ring for visual interest */}
+      <mesh rotation={[Math.PI / 2, 0, 0]}>
+        <torusGeometry args={[1.9, 0.01, 16, 100]} />
+        <meshBasicMaterial color="#3b82f6" transparent opacity={0.3} />
+      </mesh>
+
+      {/* ORBITING TEXT - Vibrant blue color that pops on light background */}
       <group ref={textRef}>
         <Billboard>
           <Text
-            fontSize={.68}
-            color="#eab308" // muted gold
+            fontSize={0.68}
+            color="#1e40af" // Deep blue that stands out
             anchorX="center"
             anchorY="middle"
+            outlineWidth={0.01}
+            outlineColor="#ffffff"
+            outlineOpacity={0.8}
           >
             {orbitText}
           </Text>
         </Billboard>
       </group>
 
-      {/* === STARS (SUBTLE, NOT NOISY) === */}
+      {/* SUBTLE STARS - Less visible but add depth */}
       <Stars
         radius={300}
         depth={70}
-        count={4500}
-        factor={3}
+        count={2000}
+        factor={2}
         saturation={0}
         fade
-        speed={0.4}
+        speed={0.3}
       />
+
+      {/* Atmospheric glow around Earth */}
+      <mesh scale={1.05}>
+        <sphereGeometry args={[1, 32, 32]} />
+        <meshBasicMaterial
+          color="#3b82f6"
+          transparent
+          opacity={0.1}
+          depthWrite={false}
+        />
+      </mesh>
     </>
   );
 };
@@ -109,7 +143,12 @@ export default function GlobeHero({ orbitText, isRotationEnabled }: GlobeHeroPro
         dpr={[1, 2]}
       >
         <Scene orbitText={orbitText} isRotationEnabled={isRotationEnabled} />
-        <OrbitControls enableZoom={false} enablePan={false} />
+        <OrbitControls 
+          enableZoom={true} 
+          enablePan={false}
+          minDistance={3}
+          maxDistance={8}
+        />
       </Canvas>
     </div>
   );
