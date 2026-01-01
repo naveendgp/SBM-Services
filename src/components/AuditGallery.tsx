@@ -4,36 +4,42 @@ import { useEffect, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const images = [
+  // {
+  //   src: "/images/1.jpeg",
+  //   title: "Empanelment of a nationalised bank",
+  //   location: "Tamil Nadu",
+  // },
+  // {
+  //   src: "/images/2.png",
+  //   title: "Worker Safety & Statutory Compliance Training",
+  //   location: "Vaniyambadi, Tamil Nadu",
+  // },
+  // {
+  //   src: "/images/3.jpeg",
+  //   title: "Internal GAP Audit & Documentation Review",
+  //   location: "Leather Industry Unit",
+  // },
+  //  {
+  //   src: "/images/4.png",
+  //   title: "On-site Compliance Awareness Session",
+  //   location: "Manufacturing Facility – Tamil Nadu",
+  // },
+  // {
+  //   src: "/images/5.jpeg",
+  //   title: "EHS & Statutory Awareness Program",
+  //   location: "Industrial Unit – Tamil Nadu",
+  // },
+  // {
+  //   src: "/images/6.jpeg",
+  //   title: "Worker Safety & Statutory Compliance Training",
+  //   location: "Vaniyambadi, Tamil Nadu",
+  // },
   {
-    src: "/images/1.jpeg",
-    title: "Empanelment of a nationalised bank",
-    location: "Tamil Nadu",
-  },
-  {
-    src: "/images/2.png",
-    title: "Worker Safety & Statutory Compliance Training",
-    location: "Vaniyambadi, Tamil Nadu",
-  },
-  {
-    src: "/images/3.jpeg",
-    title: "Internal GAP Audit & Documentation Review",
-    location: "Leather Industry Unit",
-  },
-   {
-    src: "/images/4.png",
-    title: "On-site Compliance Awareness Session",
-    location: "Manufacturing Facility – Tamil Nadu",
-  },
-  {
-    src: "/images/5.jpeg",
-    title: "EHS & Statutory Awareness Program",
-    location: "Industrial Unit – Tamil Nadu",
-  },
-  {
-    src: "/images/6.jpeg",
-    title: "Worker Safety & Statutory Compliance Training",
-    location: "Vaniyambadi, Tamil Nadu",
-  },
+    src:"/images/7.jpeg",
+    title:"Thiru Zafrula, Managing Director, Ranitec PVT LTD & President South Indian Tanners Association",
+    location:"( SBM Team has Successfully completed  GAP Audit for  72 companies as per EAC Requirement )"
+    
+  }
 ];
 
 export default function AuditGallery() {
@@ -153,3 +159,4 @@ export default function AuditGallery() {
     </>
   );
 }
+  

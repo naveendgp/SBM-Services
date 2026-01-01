@@ -45,15 +45,37 @@ export default function Contact() {
   };
 
   const onSubmit = async (data: ContactFormValues) => {
-    setTimeout(() => {
+  try {
+    const response = await fetch("https://formspree.io/f/xaqnwkrr", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({
+        ...data,
+        _subject: "New Contact Form Submission - SBM Services",
+      }),
+    });
+
+    if (response.ok) {
       toast({
         title: "Message Sent Successfully!",
         description: "Thank you for contacting us. We'll get back to you soon.",
       });
-      
       form.reset();
-    }, 1000);
-  };
+    } else {
+      throw new Error("Submission failed");
+    }
+  } catch (error) {
+    toast({
+      title: "Unable to send message",
+      description: "Please try again later or contact us directly.",
+      variant: "destructive",
+    });
+  }
+};
+
 
   return (
     <div className="min-h-screen">
@@ -126,6 +148,7 @@ export default function Contact() {
                       </FormItem>
                     )}
                   />
+<input type="text" name="_gotcha" className="hidden" />
 
                   <FormField
                     control={form.control}

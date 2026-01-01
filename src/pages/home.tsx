@@ -221,13 +221,13 @@ export default function Home() {
 
               {/* Description */}
               <p className="text-lg sm:text-xl text-blue-100 leading-relaxed">
-                We specialize in <span className="text-cyan-300 font-semibold">GAP, EAC, ISO 45001 & SA 8000</span> compliance, transforming complex regulations into actionable, audit-ready solutions for industries across South India.
+                Compliance for   certification audits through accredited certification bodies such as <span className="text-cyan-300 font-semibold"> BSI, DQS, DNV, SGS, and Intertek (PACD) </span>
               </p>
 
               {/* Key Points */}
               <div className="space-y-3 pt-2">
                 {[
-                  "Supreme Court & EAC Compliance Experts",
+                  "Environment Audits for EAC Compliance Experts",
                   "25+ Years of Industry Experience",
                   "87+ Companies Successfully Served"
                 ].map((point, index) => (
