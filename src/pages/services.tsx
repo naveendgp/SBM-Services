@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Shield, GraduationCap, Factory, CheckCircle, FileCheck, Users, Flame, Zap, HeartPulse, HardHat } from "lucide-react";
+import { Shield, GraduationCap, Factory, CheckCircle, FileCheck, Users, Flame, Zap, HeartPulse, HardHat, Award } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "wouter";
 
@@ -16,7 +16,7 @@ export default function Services() {
     icon: CheckCircle,
     title: "Compliance Services",
     description:
-      "Comprehensive statutory, environmental, and operational compliance support aligned with regulatory and Supreme Court requirements.",
+      "Comprehensive statutory, environmental, and operational compliance support aligned with regulatory requirements.",
   },
   {
     icon: FileCheck,
@@ -41,6 +41,12 @@ export default function Services() {
     title: "ISO 50001 – EnMS",
     description:
       "Energy Management Systems to improve energy efficiency, reduce costs, and support continual improvement.",
+  },
+  {
+    icon: Award,
+    title: "ZED Audits",
+    description:
+      "Zero Defect Zero Effect assessments to help MSMEs achieve ZED certification through improved quality, productivity, and environmental performance.",
   },
   {
     icon: Shield,

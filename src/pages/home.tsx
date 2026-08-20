@@ -1,6 +1,6 @@
 import { Link } from "wouter";
 import { motion } from "framer-motion";
-import { Shield, Award, Users, ChevronRight, CheckCircle, Sparkles } from "lucide-react";
+import { Shield, Award, Users, ChevronRight, CheckCircle, Sparkles, ClipboardCheck, Truck, Package, SearchCheck, Eye } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -25,7 +25,7 @@ export default function Home() {
       icon: Shield,
       title: "GAP & EAC Compliance Audits",
       description:
-        "Supreme Court & EAC aligned GAP audits with practical, audit-ready compliance solutions.",
+        "Ranitec CETP Memebers Unit Gap Audit 72 members .aligned GAP audits with practical, audit-ready compliance solutions.",
       href: "/services",
     },
     {
@@ -41,6 +41,39 @@ export default function Home() {
       description:
         "Strong exposure to Tanneries, IETPs, Textile units, and Manufacturing industries.",
       href: "/services",
+    },
+  ];
+
+  const coreAuditTypes = [
+    {
+      icon: ClipboardCheck,
+      title: "Internal Audit",
+      description:
+        "Systematic in-house reviews of your processes and management systems to verify compliance, expose gaps early, and keep the organisation audit-ready.",
+    },
+    {
+      icon: Truck,
+      title: "Supplier Audit",
+      description:
+        "Second-party assessments of vendors and contractors to confirm they meet your quality, statutory, and social compliance standards before risk reaches your supply chain.",
+    },
+    {
+      icon: Package,
+      title: "Product Audit",
+      description:
+        "Independent verification of finished goods against specifications, customer requirements, and regulatory norms to safeguard quality and reduce rejections.",
+    },
+    {
+      icon: SearchCheck,
+      title: "GAP Audit",
+      description:
+        "A clear comparison of your current practices against the applicable standard, delivering a prioritised roadmap of what must be closed before certification.",
+    },
+    {
+      icon: Eye,
+      title: "Surveillance Audit",
+      description:
+        "Periodic follow-up audits that confirm your certified systems remain effective, corrective actions have held, and continual improvement is on track.",
     },
   ];
 
@@ -351,7 +384,7 @@ export default function Home() {
             <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto px-4">
               Founded by Mr. Shivakumar, MBA, MLM, SBM Services delivers practical
               GAP audits, compliance assessments, and consultancy aligned with
-              Supreme Court, EAC, ISO, and statutory requirements across South
+              EAC, ISO, and statutory requirements across South
               India.
             </p>
           </motion.div>
@@ -383,6 +416,60 @@ export default function Home() {
                     </CardContent>
                   </Card>
                 </Link>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ================= CORE AUDIT TYPES SECTION ================= */}
+      <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-b from-blue-50/60 to-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+
+          {/* Section Header */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-8 md:mb-12"
+          >
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3 md:mb-4">
+              Core Audit Types
+            </h2>
+            <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-cyan-400 mx-auto rounded-full mb-4 md:mb-6" />
+            <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto px-4">
+              The five audit formats we carry out most often, covering your own
+              systems, your suppliers, your products, and the checks that keep
+              certification in place.
+            </p>
+          </motion.div>
+
+          {/* Audit Types Grid */}
+          <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
+            {coreAuditTypes.map((audit, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]"
+              >
+                <Card className="h-full group border-2 border-blue-100 hover:border-blue-300 hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-white to-blue-50/30">
+                  <CardHeader>
+                    <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-gradient-to-br from-blue-100 to-cyan-100 flex items-center justify-center mb-3 md:mb-4 group-hover:scale-110 transition-transform shadow-md">
+                      <audit.icon className="h-6 w-6 sm:h-7 sm:w-7 text-blue-600" />
+                    </div>
+                    <CardTitle className="text-lg sm:text-xl text-gray-900 group-hover:text-blue-600 transition-colors">
+                      {audit.title}
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <CardDescription className="text-sm sm:text-base text-gray-600">
+                      {audit.description}
+                    </CardDescription>
+                  </CardContent>
+                </Card>
               </motion.div>
             ))}
           </div>

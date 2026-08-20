@@ -42,7 +42,7 @@ export default function About() {
             <p className="text-muted-foreground">
               With over 25 years of corporate experience in HR & Industrial Relations, SBM Services
               delivers practical GAP audits, internal assessments, and audit-ready solutions aligned
-              with Supreme Court, EAC, ISO, and statutory requirements.
+              with EAC, ISO, and statutory requirements.
             </p>
           </motion.div>
 

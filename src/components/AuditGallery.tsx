@@ -4,11 +4,7 @@ import { useEffect, useState } from "react";
 import { ChevronLeft, ChevronRight, Maximize2 } from "lucide-react";
 
 const images = [
-  {
-    src: "/images/1.jpeg",
-    title: "Empanelment of a nationalised bank",
-    location: "Tamil Nadu",
-  },
+ 
   {
     src: "/images/2.png",
     title: "Worker Safety & Statutory Compliance Training",
